@@ -1,0 +1,17 @@
+---
+- name: Initial Configuration
+  hosts: wscmail
+  become: yes
+  tasks:
+  - name: "Install Package: Postfix"
+    ansible.builtin.apt:
+      name: postfix
+      state: present
+  - name: "Install Package: Dovecot-core"
+    ansible.builtin.apt:
+      name: dovecot-core
+      state: present
+  - name: "Install Package: Dovecot-imapd"
+      ansible.builtin.apt:
+        name: dovecot-imapd
+        state: present
